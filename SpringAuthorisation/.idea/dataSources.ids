@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="PostgreSQL - Egorchev@localhost" uuid="aa656f59-18d4-4867-b9c6-aa7a2918f65b">
+    <database-info product="PostgreSQL" version="9.3.3" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.3 JDBC4 (build 1100)">
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact"/>
+    <schema name="public" catalog="Egorchev"/>
+    <table name="about_user" schema="public" catalog="Egorchev" type="TABLE">
+      <column name="login" sqlType="varchar" length="30" precision="0" nullable="false" jdbcType="12"/>
+      <column name="firstname" sqlType="varchar" length="30" precision="0" nullable="true" jdbcType="12"/>
+      <column name="lastname" sqlType="varchar" length="30" precision="0" nullable="true" jdbcType="12"/>
+      <column name="bdate" sqlType="date" length="13" precision="0" nullable="true" jdbcType="91"/>
+      <column name="hobby" sqlType="varchar" length="300" precision="0" nullable="true" jdbcType="12"/>
+      <primary-key name="pk_about_user" columns="login"/>
+    </table>
+    <table name="forum" schema="public" catalog="Egorchev" type="TABLE">
+      <column name="id" sqlType="serial" length="10" precision="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnZm9ydW1faWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
+      <column name="author" sqlType="varchar" length="20" precision="0" nullable="true" jdbcType="12"/>
+      <column name="comment" sqlType="varchar" length="600" precision="0" nullable="true" jdbcType="12"/>
+      <column name="date_comment" sqlType="timestamp" length="29" precision="6" nullable="true" jdbcType="93" def="bm93KCk="/>
+      <primary-key name="pk_forum" columns="id"/>
+    </table>
+    <table name="forum_id_seq" schema="public" catalog="Egorchev" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" length="2147483647" precision="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" length="1" precision="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" length="1" precision="0" nullable="false" jdbcType="-7"/>
+    </table>
+    <table name="messages" schema="public" catalog="Egorchev" type="TABLE">
+      <column name="id" sqlType="serial" length="10" precision="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnbWVzc2FnZXNfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
+      <column name="fromlogin" sqlType="varchar" length="30" precision="0" nullable="true" jdbcType="12"/>
+      <column name="tologin" sqlType="varchar" length="30" precision="0" nullable="true" jdbcType="12"/>
+      <column name="date" sqlType="timestamp" length="29" precision="6" nullable="true" jdbcType="93" def="bm93KCk="/>
+      <column name="message" sqlType="varchar" length="300" precision="0" nullable="true" jdbcType="12"/>
+      <primary-key name="pk_messages" columns="id"/>
+    </table>
+    <table name="messages_id_seq" schema="public" catalog="Egorchev" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" length="2147483647" precision="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" length="1" precision="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" length="1" precision="0" nullable="false" jdbcType="-7"/>
+    </table>
+    <table name="users" schema="public" catalog="Egorchev" type="TABLE">
+      <column name="id" sqlType="serial" length="10" precision="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgndXNlcnNfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
+      <column name="login" sqlType="varchar" length="30" precision="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="varchar" length="30" precision="0" nullable="false" jdbcType="12"/>
+      <column name="avatar" sqlType="varchar" length="100" precision="0" nullable="true" jdbcType="12" def="J2VtcHR5LmpwZyc="/>
+      <primary-key name="pk_users" columns="id"/>
+      <index name="users_login_key" unique="true" columns="login"/>
+    </table>
+    <table name="users_id_seq" schema="public" catalog="Egorchev" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" length="2147483647" precision="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" length="1" precision="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" length="1" precision="0" nullable="false" jdbcType="-7"/>
+    </table>
+  </data-source>
+</component>
